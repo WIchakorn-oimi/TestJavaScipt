@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div  class="nav_container">
+            <a href="index.html">
+                <img src="./imgs/html-icon-3d-rendering-illustrat.webp" class="logonav">
+            </a>
+            <div class="nav-profile">
+                <p>TEST</p>
+                <div onclick="opencarts()" class="nan-profile-logo">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;">
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchSomething(this)" id="txt-search" type="text" class="sidebar-search" placeholder="Search Someting...">
+            <a onclick="searchProduct('all')" class="sidebar-item">ALL product</a>
+            <a onclick="searchProduct('Shoes')" class="sidebar-item">Shoes</a>
+            <a onclick="searchProduct('Shirt')" class="sidebar-item">Shirt</a>
+        </div>
+
+        <div id="productlist" class="product">
+            
+        </div>
+    </div>
+
+    <div id="modalDesc" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Detail</h2>
+            <br>
+            <div class="modalesc-content">
+                <img id="mdd-img" class="modal-img" src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNob2VzfGVufDB8fDB8fHww" alt="">
+                <div class="modalesc-detail">
+                    <p id="mdd-name" style="font-size: 1.2vw;">Product name</p>
+                    <p id="mdd-price" style="font-size: 1.2vw;">500</p>
+                    <br>
+                    <p id="mdd-desc" style="color: #adadad;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptate provident facilis impedit accusantium suscipit rem nobis, vel at, quibusdam est. Maxime quisquam nostrum adipisci nesciunt! Accusamus ipsum quibusdam porro!</p>
+                    <br>
+                    <div class="btn-control">
+                        <button onclick="closeModal()" class="btn">
+                            closs
+                        </button>
+                        <button onclick="addtocarts()" class="btn btn-buy">
+                            Add to carts
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="closeModal()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>MYCARTS</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+                
+            </div>
+            
+            <div class="btn-control">
+                <button onclick="closeModal()" class="btn">
+                    Cancle
+                </button>
+                <button  class="btn btn-buy">
+                    Buy
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
